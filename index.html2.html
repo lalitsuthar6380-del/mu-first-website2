@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>\
+  <meta charset="UTF-8">
+  <title>My First Website</title>
+
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #f2f2f2;
+      font-family: Arial, sans-serif;
+    }
+
+    .box {
+      background: white;
+      padding: 30px;
+      width: 320px;
+      text-align: center;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    }
+
+    .box img {
+      width: 120px;
+      border-radius: 50%;
+      margin-bottom: 10px;
+    }
+
+    button {
+      background: green;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    button:hover {
+      background: darkgreen;
+    }
+
+    input, textarea {
+      width: 100%;
+      margin-top: 8px;
+      padding: 8px;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="box">
+  <img src="photo.jpg">
+  <h1>Hello Lalit 🔥</h1>
+  <p>Mera naam Lalit hai</p>
+  <p>Main ek beginner web developer hoon 🚀</p>
+
+  <form onsubmit="sendMsg(); return false;">
+    <input type="text" id="name" placeholder="Your Name" required>
+    <input type="tel" id="mobile" placeholder="Mobile Number" required>
+    <textarea id="message" placeholder="Your Message"></textarea>
+    <button type="submit">Send</button>
+  </form>
+</div>
+
+<script>
+function sendMsg() {
+  var name = document.getElementById("name").value;
+  var mobile = document.getElementById("mobile").value;
+  var message = document.getElementById("message").value;
+
+  var text =
+    "Hello, mera naam " + name +
+    "%0AMobile: " + mobile +
+    "%0AMessage: " + message;
+
+  var url = "https://wa.me/917877711866?text=" + text;
+  window.open(url, "_blank");
+}
+</script>
+
+</body>
+</html>
